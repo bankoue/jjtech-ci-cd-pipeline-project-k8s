@@ -16,7 +16,7 @@ pipeline {
     stage('Git Checkout') {
       steps {
         echo 'Cloning the application code...'
-        git branch: 'main', url: 'https://github.com/anselmenumbisia/jjtech-ci-cd-pipeline-project-k8s.git'
+        git branch: 'main', url: 'https://github.com/bankoue/jjtech-ci-cd-pipeline-project-k8s.git
       }
     }
 
@@ -115,7 +115,7 @@ pipeline {
       environment {
         awsAccountId = '731458873148'
         region = 'us-east-1'
-        repositoryName = 'ecr-docker-k8s'
+        repositoryName = 'jjtech-demo'
         dockerImageTag = "${BUILD_NUMBER}"
         ecrRegistry = "${awsAccountId}.dkr.ecr.${region}.amazonaws.com"
       }
